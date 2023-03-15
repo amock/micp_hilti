@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+
+<launch>
+
+<include file="$(env PWD)/uzh_tracking_area_run2.launch" />
+
+<node pkg="amock_tools" type="leaf_odom_to_root" name="leaf_odom_to_root" >
+  <param name="base_frame" value="base_link" />
+  <param name="odom_frame_leaf" value="imu_madgwick" />
+  <param name="odom_frame" value="odom" />
+</node>
+
+# RMCL
+# visualize map
+<arg name="mesh_file" default="$(env PWD)/uzh_tracking_area_run2_meshes/uzh_mesh_featsense_reduced_09.ply" />
+<arg name="mesh_to_map_transform" default="[-5.83497, 3.80209, 1.55322, 0.0287452, -0.0106584, -0.999466, -0.0112709]" />
+<arg name="initial_guess" default="[-5.80485, 3.77939, 1.82713, -3.12578, 0.0558613, 3.1268]" />
+
+
+<node pkg="rmagine_ros" type="mesh_publisher" name="mesh_publisher" output="screen">
+    <param name="file" type="string" value="$(arg mesh_file)" />
+    <param name="frame" type="string" value="map" />
+    <param name="publish_freq" value="0.1" />
+    <rosparam param="pre_transform" subst_value="True">$(arg mesh_to_map_transform)</rosparam>
+</node>
+
+# run registration
+<node pkg="rmcl" type="micp_hilti" name="micp_hilti" output="screen">
+    <param name="mesh_file" type="string" value="$(arg mesh_file)" />
+    <rosparam param="mesh_to_map_transform" subst_value="True">$(arg mesh_to_map_transform)</rosparam>
+    <rosparam param="initial_guess" subst_value="True">$(arg initial_guess)</rosparam>
+
+    <param name="disable_registration" value="false" />
+    <param name="generate_evaluation" value="false" />
+
+    <param name="iterations" value="20" />
+</node>
+
+# Start Rviz
+<node pkg="rviz" type="rviz" name="rviz" args="-d $(env PWD)/uzh_tracking_area_run2.rviz" />
+
+</launch>
