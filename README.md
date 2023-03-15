@@ -37,11 +37,11 @@ For visualization of the mesh map in RViz
 
 ## Hilti Bag Files
 
-Download Hilti bagfiles
-- `LAB_Survey_1.bag`
-- `LAB_Survey_2.bag`
-- `uzh_tracking_area_run2.bag`
-- `uzh_tracking_area_run5.bag`
+Download [Hilti](https://hilti-challenge.com/dataset-2021.html) bagfiles
+- [`LAB_Survey_1.bag`](https://storage.googleapis.com/hilti_challenge/LAB_Survey_1.bag)
+- [`LAB_Survey_2.bag`](https://storage.googleapis.com/hilti_challenge/LAB_Survey_2.bag)
+- [`uzh_tracking_area_run2.bag`](https://storage.googleapis.com/hilti_challenge/uzh_tracking_area_run2.bag)
+- [`uzh_tracking_area_run5.bag`](https://storage.googleapis.com/hilti_challenge/uzh_tracking_area_run5.bag)
 
 into the root folder of this repository. Extract them with `rosbag decompress`.
 
