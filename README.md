@@ -22,7 +22,6 @@ Put the following dependencies in your ROS-workspace:
 - Link: https://github.com/uos/rmcl
 - Branch: main
 
-
 ### pointcloud_motion_deskew
 
 Since MICP-L does not interpolate between start and end of a scan we use this package to compensate for that.
