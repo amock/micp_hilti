@@ -1,2 +1,83 @@
 # micp_hilti
 
+The following instructions explain how MICP-L accuracy was evaluated on Hilti Datasets. All evaluations were done on a CPU only part of MICP-L.
+
+## System Requirements
+
+We tested these scripts on:
+- Ubuntu 20.04
+- ROS noetic
+- AMD Ryzen 7
+
+## Download
+
+Download/Clone this package anywhere in your system. Proceed with next step.
+
+## Dependencies
+
+Put the following dependencies in your ROS-workspace:
+
+### pointcloud_motion_deskew
+
+Since MICP-L does not interpolate between start and end of a scan we use this package to compensate for that.
+
+- Link: https://github.com/norlab-ulaval/pointcloud_motion_deskew
+- Branch: melodic
+
+### amock_tools
+
+Some tools for tf-preprocessing of Hilti Bags. Move from "packages" folder to your workspace.
+
+### Optional: Mesh visualization with rmagine_ros and mesh_tools
+
+For visualization of the mesh map in RViz
+
+- Link: https://github.com/uos/rmagine_ros
+- Branch: main
+
+## Hilti Bag Files
+
+Download Hilti bagfiles
+- `LAB_Survey_1.bag`
+- `LAB_Survey_2.bag`
+- `uzh_tracking_area_run2.bag`
+- `uzh_tracking_area_run5.bag`
+
+into the root folder of this repository. Extract them with `rosbag decompress`.
+
+## Execution
+
+Go to the root folder of this repository and execute
+
+### LAB Survey 1
+
+```bash
+user@pc:~/micp_hilti$ roslaunch LAB_Survey_1_micp_imu.launch
+```
+
+TODO: GIF
+
+### LAB Survey 2
+
+```bash
+user@pc:~/micp_hilti$ roslaunch LAB_Survey_2_micp_imu.launch
+```
+
+TODO: GIF
+
+### UZH Tracking Area 2
+
+```bash
+user@pc:~/micp_hilti$ roslaunch uzh_tracking_area_run2_micp_imu.launch
+```
+
+TODO: GIF
+
+### UZH Tracking Area 5
+
+```bash
+user@pc:~/micp_hilti$ roslaunch uzh_tracking_area_run5_micp_imu.launch
+```
+
+TODO: GIF
+
