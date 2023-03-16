@@ -60,15 +60,12 @@ Go to the root folder of this repository and execute
 user@pc:~/micp_hilti$ roslaunch LAB_Survey_1_micp_imu.launch
 ```
 
-TODO: GIF
-
 ### LAB Survey 2
 
 ```bash
 user@pc:~/micp_hilti$ roslaunch LAB_Survey_2_micp_imu.launch
 ```
 
-TODO: GIF
 
 ### UZH Tracking Area 2
 
@@ -76,7 +73,6 @@ TODO: GIF
 user@pc:~/micp_hilti$ roslaunch uzh_tracking_area_run2_micp_imu.launch
 ```
 
-TODO: GIF
 
 ### UZH Tracking Area 5
 
@@ -84,5 +80,4 @@ TODO: GIF
 user@pc:~/micp_hilti$ roslaunch uzh_tracking_area_run5_micp_imu.launch
 ```
 
-TODO: GIF
-
+![UZH](img/micp_hilti_uzh_x2.gif)
