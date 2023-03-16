@@ -80,4 +80,4 @@ user@pc:~/micp_hilti$ roslaunch uzh_tracking_area_run2_micp_imu.launch
 user@pc:~/micp_hilti$ roslaunch uzh_tracking_area_run5_micp_imu.launch
 ```
 
-![UZH](img/micp_hilti_uzh_x2.gif)
+![UZH](img/micp_hilti_uzh_x2.gif "Loading 'micp_hilti_uzh_x2.gif' ...")
