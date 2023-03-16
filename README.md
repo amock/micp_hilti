@@ -29,6 +29,13 @@ Since MICP-L does not interpolate between start and end of a scan we use this pa
 - Link: https://github.com/norlab-ulaval/pointcloud_motion_deskew
 - Branch: melodic
 
+### imu_filter_madgwick
+
+For IMU as prior odometry estimation:
+
+```bash
+user@pc:~$ sudo apt-get install ros-noetic-imu-filter-madgwick
+```
 ### amock_tools
 
 Some tools for tf-preprocessing of Hilti Bags. Move from "packages" folder to your workspace.
